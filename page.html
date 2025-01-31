@@ -4,20 +4,26 @@
 <head>
   <meta charset="utf-8">
   <title>EC Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    banner {
+    custom-banner {
       display: block;
       text-align: center;
       border: 1px solid #000000;
     }
 
-    banner[lvl="main"] {
+    custom-banner[lvl="main"] {
       padding: 10px;
     }
 
-    banner[lvl="sub"] {
+    custom-banner[lvl="sub"] {
       padding: 5px;
+    }
+    
+    custom-banner[lvl="footer"] {
+      padding: 5px;
+      border: 0px;
+      text-align: center;
     }
   </style>
 </head>
@@ -31,10 +37,11 @@
 	<a href="contact.html">Contact</a> |
       </nav>
     </div>
-      <banner lvl="main"><h1>Ethan Cheng's Portfolio</h1></banner>
-      <banner lvl="sub">Just Starting out! :)</banner>
-  <hr>
   </header>
+  <custom-banner lvl="main"><h1>Ethan Cheng's Portfolio</h1></custom-banner>
+  <custom-banner lvl="sub">Just Starting out! :)</custom-banner>
+  <hr>
+
   <main>
     <section id="work">
       <h2>My Work</h2>
@@ -52,13 +59,10 @@
     </section>
   </main>
 </body>
+
 <footer>
   <hr>
-  <table width="100%">
-    <tr>
-      <td align="center">
-        <a href="https://github.com/encheng0706/cse134-hw2">Github Repo</a>
-      </td>
-    </tr>
-  </table>
+  <custom-banner lvl="footer">
+    <a href="https://github.com/encheng0706/cse134-hw2">Github Repo</a>
+  </custom-banner>
 </footer>
