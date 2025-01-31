@@ -16,16 +16,52 @@
       </nav>
     </div>
   </header>
-  <h3>This is an h3 header test</h3>
+  <h3>This is an h3 header test<br> and a line break test</h3>
   <p>Here is an image:</p>
-  <img src="images/smile.png" width="150" alt="Thumbs up emoji">
+  <picture>
+    <source srcset="images/smile.png">
+    <img src="images/smile.png" width="150" alt="Thumbs up emoji">
+  </picture>
+  <figure>
+    <img src="images/smile.png" width="150" alt="Thumbs up emoji with caption">
+    <figcaption>A captioned Thumbs up</figcaption>
+  </figure>
   <p><i>This is italicized.</i></p>
-  <p>
+  <p>This <em>word</em> is emphasized.</p>
+  <p>The <code>code</code> tag does this.</p>
+  <pre>This text is pre formatted.</pre>
     <span style="font-family: 'Jost', Sans-serif;">This is an imported font.</span>
   </p>
   <aside>
-    <video width="200" controls="">
+    <video width="400" controls="">
       <source src="/videos/jujube.mp4" type="video/mp4">
     </video>
   </aside>
+  <table border="1">
+    <caption>A Tic Tac Toe Game</caption>
+    <colgroup>
+      <col>
+      <col style="background-color: green">
+    </colgroup>
+    <tr>
+      <th>O</th>
+      <th>X</th>
+      <th> </th>
+    </tr>
+    <tr>
+      <th>O</th>
+      <th>X</th>
+      <th>O</th>
+    </tr>
+    <tr>
+      <th>X</th>
+      <th>X</th>
+      <th> </th>
+    </tr>
+  </table>
+  <audio controls="">
+    <source src="audio/MOONBAND - I Should Be Gone.mp3" type="audio/mpeg">
+  </audio>
+
+
 </body>
