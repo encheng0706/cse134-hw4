@@ -2,23 +2,46 @@
 <html lang="en">
 
 <head>
+  <meta charset="utf-8">
   <title>EC Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    banner {
+      display: block;
+      text-align: center;
+      border: 1px solid #000000;
+    }
+
+    banner[lvl="main"] {
+      padding: 10px;
+    }
+
+    banner[lvl="sub"] {
+      padding: 5px;
+    }
+  </style>
 </head>
 
 <body>
   <header>
-    <center>
-      <h1>Ethan Cheng's Portfolio</h1>
-      <p>Just Starting out! :)</p>
-    </center>
+    <div id="menu" style="display: block;">
+      <nav>
+        <a href="page.html">Main</a> |
+	<a href="#work">My Work</a> |
+	<a href="contact.html">Contact</a> |
+      </nav>
+    </div>
+      <banner lvl="main"><h1>Ethan Cheng's Portfolio</h1></banner>
+      <banner lvl="sub">Just Starting out! :)</banner>
   <hr>
   </header>
   <main>
-    <section class="work">
+    <section id="work">
       <h2>My Work</h2>
+      <p>Coming soon...</p>
     </section>
-    <section class="experiments">
+    <hr>
+    <section id="experiments">
       <h2>Experiments</h2>
       <p>Contains HW2 tag requirements:</p>
       <ul>
