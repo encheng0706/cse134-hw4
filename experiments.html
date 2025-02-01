@@ -5,7 +5,6 @@
   <title>HW2 Sandbox</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://fonts.googleapis.com/css?family=Jost/>
-
 </head>
 
 <body>
@@ -37,6 +36,7 @@
       <source src="/videos/jujube.mp4" type="video/mp4">
     </video>
   </aside>
+  <br><br>
   <table border="1">
     <caption>A Tic Tac Toe Game</caption>
     <colgroup>
@@ -59,9 +59,56 @@
       <th> </th>
     </tr>
   </table>
+  <br><br>
   <audio controls="">
     <source src="audio/MOONBAND - I Should Be Gone.mp3" type="audio/mpeg">
   </audio>
+  <br><br>
+  <!-- A placeholder as I am not yet sure how to implement without JS -->
+  <form>
+    <select id="contact-choices" name="contact-choices">
+      <optgroup label="Choose an option:">
+        <option value="email">Email</option>
+        <option value="linkedin">LinkedIn</option>
+      </optgroup>
+      <br><br>
+      <input type="submit" value="Continue">
+    </select>
+  <form>
+  <br>
+  <p>Here is a smile using canvas:</p>
+  <canvas id="smile-canvas" width="500" height="200"></canvas>
+  <script>
+    const canvas = document.getElementById('smile-canvas');
+    const pen = canvas.getContext('2d');
+    pen.beginPath();
+    pen.arc(110, 50, 15, 0, Math.PI*2);
+    pen.arc(190, 50, 15, 0, Math.PI*2);
+    pen.fillStyle = 'black';
+    pen.fill();
+    pen.beginPath();
+    pen.arc(150, 90, 60, 0, Math.PI);
+    pen.strokeStyle = 'black';
+    pen.stroke();
+  </script>
+  <p>Inline svg for this rectangle:</p>
+  <svg width="500" height="200" xmlns="http://www.w3.org/2000/svg">
+    <rect x="50" y="50" width="200" height="100" fill="black">
+  </svg>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 </body>
