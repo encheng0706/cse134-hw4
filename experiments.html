@@ -71,15 +71,21 @@
   </audio>
   <br><br>
   <!-- A placeholder as I am not yet sure how to implement without JS -->
+  
   <form>
-    <select id="contact-choices" name="contact-choices">
-      <optgroup label="Choose an option:">
-        <option value="email">Email</option>
-        <option value="linkedin">LinkedIn</option>
-      </optgroup>
-      <br><br>
-      <button type="submit" value="Continue">
-    </select>
+    <fieldset>
+      <Legend>Preferred Communication:</legend>
+      <select id="contact-choices" name="contact-choices">
+        <optgroup label="Choose an option:">
+          <option value="email">Email</option>
+          <option value="linkedin">LinkedIn</option>
+        </optgroup>
+        <br><br>
+        <button type="submit" value="Continue">
+      </select>
+    <br>
+    <textarea id="contact-textbox" name="contact-textbox" rows="5" cols="50">Or write your message here.</textarea>
+    </fieldset>
   <form>
   <br>
   <p>Here is a smile using <dfn title="Uses some JS">canvas</dfn>:</p>
@@ -108,17 +114,14 @@
   <blockquote cite="Myself"> This is my quote.</blockquote>
   <p>Deleting this <del>word</del> and inserting this <ins>one</ins>.</p>
   <p>Reload this page using <kbd>Ctrl</kbd> + <kbd>R</kbd>.</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
+  <label for="datalist-test">Type an option(Email or LinkedIn):</label>
+  <input list="datalist" id="datalist-test" name="datalist-test">
+  <datalist id="datalist">
+    <option value="Email">
+    <option value="LinkedIn">
+  </datalist>
+  <br>
+  <template>
+    <p>Hide this.</p>
+  </template>
 </body>
