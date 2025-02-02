@@ -15,6 +15,10 @@
       </nav>
     </div>
   </header>
+  <details>
+    <summary><h1>HW2 Sandbox</h1></summary>
+    <p>This is where tags unused in the main page is tested and demoed.</p>
+  </details>
   <h3>This is an h3 header test<br> and a line break test</h3>
   <p>Here is an image:</p>
   <picture>
@@ -29,7 +33,9 @@
   <p>This <em>word</em> is emphasized.</p>
   <p>The <code>code</code> tag does this.</p>
   <pre>This text is pre formatted.</pre>
-    <span style="font-family: 'Jost', Sans-serif;">This is an imported font.</span>
+    <span style="font-family: 'Jost', Sans-serif;">
+      This is an imported font called Jost.
+    </span>
   </p>
   <aside>
     <video width="400" controls="">
@@ -72,11 +78,11 @@
         <option value="linkedin">LinkedIn</option>
       </optgroup>
       <br><br>
-      <input type="submit" value="Continue">
+      <button type="submit" value="Continue">
     </select>
   <form>
   <br>
-  <p>Here is a smile using canvas:</p>
+  <p>Here is a smile using <dfn title="Uses some JS">canvas</dfn>:</p>
   <canvas id="smile-canvas" width="500" height="200"></canvas>
   <script>
     const canvas = document.getElementById('smile-canvas');
@@ -91,13 +97,17 @@
     pen.strokeStyle = 'black';
     pen.stroke();
   </script>
+  <noscript>
+    <p>Enable Javascript to view the smiley face.</p>
+  </noscript>
   <p>Inline svg for this rectangle:</p>
   <svg width="500" height="200" xmlns="http://www.w3.org/2000/svg">
     <rect x="50" y="50" width="200" height="100" fill="black">
   </svg>
-
-
-
+  <p>Here is an example of using a blockquote.</p>
+  <blockquote cite="Myself"> This is my quote.</blockquote>
+  <p>Deleting this <del>word</del> and inserting this <ins>one</ins>.</p>
+  <p>Reload this page using <kbd>Ctrl</kbd> + <kbd>R</kbd>.</p>
 
 
 
