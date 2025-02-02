@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <title>HW2 Sandbox</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://fonts.googleapis.com/css?family=Jost/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Jost" rel="stylesheet">
 </head>
 
 <body>
@@ -36,18 +36,19 @@
     <span style="font-family: 'Jost', Sans-serif;">
       This is an imported font called Jost.
     </span>
-  </p>
+  <br><br>
   <aside>
     <video width="400" controls="">
       <source src="/videos/jujube.mp4" type="video/mp4">
     </video>
   </aside>
-  <br><br>
-  <table border="1">
+  <br>
+  <table>
     <caption>A Tic Tac Toe Game</caption>
     <colgroup>
       <col>
       <col style="background-color: green">
+      <col>
     </colgroup>
     <tr>
       <th>O</th>
@@ -65,13 +66,12 @@
       <th> </th>
     </tr>
   </table>
-  <br><br>
+  <br>
   <audio controls="">
-    <source src="audio/MOONBAND - I Should Be Gone.mp3" type="audio/mpeg">
+    <source src="audio/MOONBAND-IShouldBeGone.mp3" type="audio/mpeg">
   </audio>
-  <br><br>
+  <br>
   <!-- A placeholder as I am not yet sure how to implement without JS -->
-  
   <form>
     <fieldset>
       <Legend>Preferred Communication:</legend>
@@ -80,13 +80,13 @@
           <option value="email">Email</option>
           <option value="linkedin">LinkedIn</option>
         </optgroup>
-        <br><br>
-        <button type="submit" value="Continue">
       </select>
-    <br>
-    <textarea id="contact-textbox" name="contact-textbox" rows="5" cols="50">Or write your message here.</textarea>
+      <br>
+      <button type="submit">Continue</button>
+      <br>
+      <textarea id="contact-textbox" name="contact-textbox" rows="5" cols="50">Or write your message here.</textarea>
     </fieldset>
-  <form>
+  </form>
   <br>
   <p>Here is a smile using <dfn title="Uses some JS">canvas</dfn>:</p>
   <canvas id="smile-canvas" width="500" height="200"></canvas>
@@ -108,7 +108,7 @@
   </noscript>
   <p>Inline svg for this rectangle:</p>
   <svg width="500" height="200" xmlns="http://www.w3.org/2000/svg">
-    <rect x="50" y="50" width="200" height="100" fill="black">
+    <rect x="50" y="50" width="200" height="100" fill="black"/>
   </svg>
   <p>Here is an example of using a blockquote.</p>
   <blockquote cite="Myself"> This is my quote.</blockquote>
