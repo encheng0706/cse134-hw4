@@ -5,50 +5,84 @@
   <meta charset="utf-8">
   <title>EC Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Jost" rel="stylesheet">
   <style>
+    body {
+      font-family: 'Jost', sans-serif;
+      color: #36454F;
+    }
     custom-banner {
-      display: block;
-      text-align: center;
-      border: 1px solid #000000;
+      display: flex;
+      justify-content: center;
     }
 
     custom-banner[lvl="main"] {
-      padding: 10px;
+      padding: 5px 0px 0px 0px;
     }
 
     custom-banner[lvl="sub"] {
-      padding: 5px;
+      padding:0px;
     }
     
     custom-banner[lvl="footer"] {
+      display: flex;
       padding: 5px;
-      border: 0px;
-      text-align: center;
+      justify-content:center;
     }
+
+    nav {
+      display:flex;
+      justify-content:flex-start;
+      gap:0.25rem;
+    }
+
+    nav a,
+    #frn a {
+      text-decoration: none;
+      font-weight: bold;
+      color:inherit;
+    }
+
+    header{
+      line-height: 2rem;
+    }
+
+    #frn h3,
+    #frn p {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
   </style>
 </head>
 
 <body>
   <header>
-    <div id="menu" style="display: block;">
       <nav>
-        <a href="index.html">Main</a> |
-	<a href="#work">My Work</a> |
-	<a href="contact.html">Contact</a> |
+        <a href="index.html">Main</a> 
+        <b>|</b>
+        <a href="#work">My Work</a> 
+        <b>|</b>
+        <a href="contact.html">Contact</a> 
+        <b>|</b>
       </nav>
-    </div>
+      <custom-banner lvl="main"><h1>Ethan Cheng's Portfolio</h1></custom-banner>
+      <custom-banner lvl="sub">Welcome! :)</custom-banner>
   </header>
-  <custom-banner lvl="main"><h1>Ethan Cheng's Portfolio</h1></custom-banner>
-  <custom-banner lvl="sub">Just Starting out! :)</custom-banner>
+
   <hr>
   <main>
     <section id="work">
       <hgroup>
         <h2>My Work</h2>
       </hgroup>
-      <form>
-        <p>Coming soon...</p>
-      </form>
+      <section id="frn">
+        <h3><a href="https://apn0017.wixstudio.com/1543">
+          FRN Website
+        </a></h3>
+        <p >A  website redesign project for UCSD's Food Recovery Network</p>
+
+      </section>
     </section>
     <hr>
     <section id="experiments">
@@ -64,7 +98,9 @@
   <footer>
     <hr>
     <custom-banner lvl="footer">
-      <a href="https://github.com/encheng0706/cse134-hw2">Github Repo</a>
+      <a href="https://github.com/encheng0706/cse134-hw2">
+        <img src="images/github-mark.png" width="24rem" alt="GitHub Repo">
+      </a>
     </custom-banner>
   </footer>
 </body>
