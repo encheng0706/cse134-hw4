@@ -3,104 +3,68 @@
 
 <head>
   <meta charset="utf-8">
-  <title>EC Portfolio</title>
+  <title>Ethan Cheng</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css?family=Jost" rel="stylesheet">
   <style>
     body {
       font-family: 'Jost', sans-serif;
       color: #36454F;
+      margin: 0;
     }
-    custom-banner {
+
+    title-banner {
       display: flex;
-      justify-content: center;
-    }
-
-    custom-banner[lvl="main"] {
-      padding: 5px 0px 0px 0px;
-    }
-
-    custom-banner[lvl="sub"] {
-      padding:0px;
+      justify-content: flex-start;
+      align-items: flex-start;
+      height: 30vh;
+      font-size: 7em;
+      line-height: 1.0;
+      margin-top: -0.5em;
     }
     
-    custom-banner[lvl="footer"] {
-      display: flex;
-      padding: 5px;
-      justify-content:center;
+    title-banner[lvl="first"] {
+      padding-top:35vh;
     }
 
+
     nav {
-      display:flex;
+      display:grid;
       justify-content:flex-start;
+      margin-top:-100px;
       gap:0.25rem;
     }
 
-    nav a,
-    #frn a {
-      text-decoration: none;
+    nav a {
       font-weight: bold;
       color:inherit;
+      text-decoration: none;
     }
 
     header{
       line-height: 2rem;
     }
 
-    #frn h3,
-    #frn p {
-      margin-top: 0;
-      margin-bottom: 0;
-    }
 
   </style>
 </head>
 
 <body>
   <header>
-      <nav>
-        <a href="index.html">Main</a> 
-        <b>|</b>
-        <a href="#work">My Work</a> 
-        <b>|</b>
-        <a href="contact.html">Contact</a> 
-        <b>|</b>
-      </nav>
-      <custom-banner lvl="main"><h1>Ethan Cheng's Portfolio</h1></custom-banner>
-      <custom-banner lvl="sub">Welcome! :)</custom-banner>
+
+
   </header>
-
-  <hr>
-  <main>
-    <section id="work">
-      <hgroup>
-        <h2>My Work</h2>
-      </hgroup>
-      <section id="frn">
-        <h3><a href="https://apn0017.wixstudio.com/1543">
-          FRN Website
-        </a></h3>
-        <p >A  website redesign project for UCSD's Food Recovery Network</p>
-
-      </section>
-    </section>
-    <hr>
-    <section id="experiments">
-      <h2>Experiments</h2>
-      <p>Contains <abbr title="CSE134B Homework 2">HW2</abbr> tag requirements:</p>
-      <ul>
-        <li>
-        <a href="experiments.html">HW2 Sandbox</a>
-        </li>
-      </ul>
-    </section>
+  <main>      
+    <title-banner lvl="first">Ethan</title-banner>
+    <title-banner>Cheng's</title-banner>
+    <title-banner>Portfolio</title-banner>
+    <nav>
+      <a href="index.html">Main</a> 
+      <b>|</b>
+      <a href="#work">My Work</a> 
+      <b>|</b>
+      <a href="contact.html">Contact</a> 
+      <b>|</b>
+    </nav>    
   </main>
-  <footer>
-    <hr>
-    <custom-banner lvl="footer">
-      <a href="https://github.com/encheng0706/cse134-hw2">
-        <img src="images/github-mark.png" width="24rem" alt="GitHub Repo">
-      </a>
-    </custom-banner>
-  </footer>
 </body>
