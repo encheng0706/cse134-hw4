@@ -19,20 +19,14 @@
       text-decoration: none;
     }
 
-    custom-banner {
-      display: flex;
-      justify-content: flex-end;
-    }
-
-    custom-banner a {
-      padding: 0px 0.3em;
-    }
-
     #work img {
-      width: 85vw;
-      max-width: 100%;
-      height: auto;
-    } 
+      width: 10vw;
+      margin-left: -0.5em;
+    }
+
+    #work {
+      line-height: 0.5;
+    }
 
     /*Phone dimensions*/
     @media (max-width: 480px) {
@@ -58,6 +52,15 @@
         font-size:1.5em;
       }
 
+      #work {
+        line-height: 1.1;
+      }
+      
+      #work img {
+        width: 85vw;
+        max-width: 100%;
+        height: auto;
+      } 
     }
 
 
@@ -73,17 +76,18 @@
         <a href="contact.html">Contact</a> 
       </nav>
       <h1>My Work</h1>
+      <br>
   </header>
   <main>
     <section id="work">
       <section id="frn">
         <h3>
-          <a href="https://apn0017.wixstudio.com/1543">FRN Website</a>
+          <a href="https://apn0017.wixstudio.com/1543">FRN Website:</a>
         </h3>
         <a href="https://apn0017.wixstudio.com/1543">
           <img src="images/FoodRecoveryNetworkBag.png" alt="FRN Graphic">
         </a>
-        <p >A website redesign project for UCSD's Food Recovery Network</p>
+        <p>A website redesign project for UCSD's Food Recovery Network</p>
       </section>
     </section>
   </main>
