@@ -11,6 +11,13 @@
       font-family: 'Jost', sans-serif;
       color: #36454F;
     }
+
+    nav a,
+    #frn a {
+      font-weight: bold;
+      color:inherit;
+    }
+
     custom-banner {
       display: flex;
       justify-content: flex-end;
@@ -20,27 +27,38 @@
       padding: 0px 0.3em;
     }
 
-    nav {
-      display:flex;
-      justify-content:flex-start;
-      gap:0.25rem;
+    #work img {
+      width: 85vw;
+      max-width: 100%;
+      height: auto;
+    } 
+
+    /*Phone dimensions*/
+    @media (max-width: 480px) {
+      
+      nav {
+        display:flex;
+        justify-content:flex-start;
+        gap:0.25rem;
+      }
+
+      header {
+        line-height: 2rem;
+      }
+            
+      header h1 {
+        font-size: 4em;
+      }
+
+      #frn h3,
+      #frn p {
+        margin-top: 0;
+        margin-bottom: 0.1;
+        font-size:1.5em;
+      }
+
     }
 
-    nav a,
-    #frn a {
-      font-weight: bold;
-      color:inherit;
-    }
-
-    header {
-      line-height: 2rem;
-    }
-
-    #frn h3,
-    #frn p {
-      margin-top: 0;
-      margin-bottom: 0;
-    }
 
 
   </style>
@@ -51,10 +69,7 @@
       <nav>
         <a href="index.html">Main</a> 
         <b>|</b>
-        <a href="#work">My Work</a> 
-        <b>|</b>
         <a href="contact.html">Contact</a> 
-        <b>|</b>
       </nav>
       <h1>My Work</h1>
   </header>
@@ -64,20 +79,12 @@
         <h3>
           <a href="https://apn0017.wixstudio.com/1543">FRN Website</a>
         </h3>
+        <a href="https://apn0017.wixstudio.com/1543">
+          <img src="images/FoodRecoveryNetworkBag.png" alt="FRN Graphic">
+        </a>
         <p >A website redesign project for UCSD's Food Recovery Network</p>
       </section>
     </section>
   </main>
-  <footer>
-    <hr>
-    <custom-banner>
-      <a href="https://github.com/encheng0706/cse134-hw2">
-        <img src="images/github-mark.png" width="21rem" alt="GitHub Repo">
-      </a>
-      <a href="https://www.linkedin.com/in/ethan-cheng-670206269/">
-        <img src="images/LI-In-Bug.png" width="24rem" alt="GitHub Repo">
-      </a>
-      
-    </custom-banner>
-  </footer>
+
 </body>
