@@ -28,6 +28,39 @@
       line-height: 0.5;
     }
 
+    /*Tablet dimensions*/
+    @media (max-width: 1024px) {
+      nav {
+        display:flex;
+        justify-content:flex-start;
+        gap:0.25rem;
+      }
+
+      header {
+        line-height: 2rem;
+      }
+            
+      header h1 {
+        font-size: 4em;
+      }
+
+      #frn h3,
+      #frn p {
+        margin-top: 0;
+        margin-bottom: 0.1;
+        font-size:1.5em;
+      }
+
+      #work img {
+        width: 25vw;
+        margin-left: -0.5em;
+      }
+
+      #work {
+        line-height: 1.1;
+      }
+    }
+
     /*Phone dimensions*/
     @media (max-width: 480px) {
       
@@ -55,7 +88,7 @@
       #work {
         line-height: 1.1;
       }
-      
+
       #work img {
         width: 85vw;
         max-width: 100%;
