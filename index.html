@@ -13,6 +13,12 @@
       margin: 0;
     }
 
+    .dark {
+      background-color: #444;
+      color: #fff;
+
+    }
+
     nav a {
       font-weight: bold;
       color:inherit;
@@ -94,6 +100,11 @@
         gap:0.25rem;
         margin-left: 1rem;
       }
+
+      button#light-dark {
+        font-family: 'Jost', sans-serif;
+        color: #36454F;        
+      }
     }
 
 
@@ -111,6 +122,39 @@
       <a href="contact.html">Contact</a>
       <b>|</b>
       <a href="form-no-js.html">HW4 Form</a>
-    </nav>    
+    </nav>
+    <br>
+    <button id="light-dark" onclick="lightDarkToggle()">Dark Mode</button>
   </main>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const button = document.getElementById("light-dark");
+      const body = document.body;
+
+      function loadTheme() {
+        const currentTheme = localStorage.getItem("theme");
+        if (currentTheme === "dark") {
+          body.classList.add("dark");
+          button.textContent = "Light Mode";
+        } else {
+          body.classList.remove("dark");
+          button.textContent = "Dark Mode";
+        }
+      }
+
+      function lightDarkToggle() {
+        body.classList.toggle("dark");
+
+        const isDark = body.classList.contains("dark");   
+
+        localStorage.setItem("theme", isDark ? "dark" : "light");
+        button.textContent = isDark ? "Light Mode" : "Dark Mode";
+      }
+
+      loadTheme();
+      button.addEventListener("click", lightDarkToggle);
+    });
+
+  </script>
 </body>
