@@ -96,24 +96,33 @@
       </nav>
     </div>
   </header>
+
   <section id="contact-info">
-  <h3>You can contact me through:</h3>
-  <!--
-  <form>
-    <select id="contact-choices" name="contact-choices">
-      <optgroup label="Choose an option:">
-        <option value="email">Email</option>
-        <option value="linkedin">LinkedIn</option>
-      </optgroup>
-      <br><br>
-      <button type="submit" value="Continue">
-    </select>
-  <form>
-  -->
-  <b>Email: </b>
-  <address><a href="mailto:ethan0706@aol.com">ethan0706@aol.com</a></address>
-  <address><a href="mailto:encheng@ucsd.edu">encheng@ucsd.edu</a></address>
-  <br>
+    <h3>You can contact me through:</h3>
+
+    <form id="contact-form" action="https://httpbin.org/post" method="post">
+      <label for="name">
+        <p>Name:</p>
+        <input id="name" type="text" name="name" required minlength="0">
+      </label>
+
+      <label for="email">
+        <p>Email:</p>
+        <input id="email" type="email" name="email" required minlength="8">
+      </label>
+
+      <label for="message">
+        <p>Message:</p>
+        <textarea id="message" name="message" required maxlength="300"></textarea>
+      </label>
+
+      <br>
+      <input type="hidden" name="possible_bot" value="true">
+      <button type="submit">Send</button>
+
+      <output id="error-output"></output>
+      <output id="info-output"></output>
+    </form>
   </section>
   <!--PC and tablet view-->
   <div id="resume">
@@ -135,4 +144,85 @@
       </a>
     </custom-banner>
   </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const form = document.getElementById("contact-form");
+      const nameField = document.getElementById("name");
+      const emailField = document.getElementById("email");
+      const messageField = document.getElementById("message");
+      const errorOutput = document.getElementById("error-output");
+      const charCounter = document.getElementById("char-counter");
+      const formErrorsInputted = document.getElementById("form-errors");
+
+      let form_errors = [];
+
+      const namePattern = /^[a-zA-Z\s'-]+$/;
+      const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      const messagePattern = /^[a-zA-Z0-9 .,!?'\-]*$/;
+
+      
+      function errorMessage(message) {
+        errorOutput.textContent = message;
+        errorOutput.style.opacity = "1";
+        setTimeout(() => {
+          errorOutput.style.opacity = "0";
+        }, 3000);
+      }
+
+      function validateField(field, pattern, errorMessage) {
+        if (!pattern.test(field.value)) {
+          field.setCustomValidity(errorMessage);
+          field.classList.add("error-highlight");
+          showError(errorMessage);
+          form_errors.push({ field: field.name, message: errorMessage });
+
+          setTimeout(() => field.classList.remove("error-highlight"), 500);
+        } else {
+          field.setCustomValidity("");
+        }
+      }
+
+      /*backspace on invalid chars*/
+      function invalidCharEnter(event, pattern, field) {
+        if (!pattern.test(event.key) && event.key !== "Backspace") {
+          event.preventDefault();
+          field.classList.add("error-highlight");
+          showError(`Invalid character: "${event.key}"`);
+          setTimeout(() => field.classList.remove("error-highlight"), 500);
+        }
+      }
+
+      nameField.addEventListener("keypress", (event) => invalidCharEnter(event, /^[a-zA-Z\s'-]$/, nameField));
+      messageField.addEventListener("keypress", (event) => invalidCharEnter(event, /^[a-zA-Z0-9 .,!?'\-]$/, messageField));
+      
+      /*max length warning*/
+      messageField.addEventListener("input", function() {
+        let remaining = 300 - messageField.value.length;
+        charCounter.textContent = `Characters remaining: ${remaining}`;
+        charCounter.style.color = remaining <= 50 ? "orange" : "black";
+        if (remaining <= 10) charCounter.style.color = "red";
+        if (remaining < 0) {
+          messageField.setCustomValidity("Message exceeds the character limit.");
+          form_errors.push({ field: "message", message: "Exceeded character limit." });
+        } else {
+          messageField.setCustomValidity("");
+        }
+      });
+
+      form.addEventListener("submit", function(event) {
+        form_errors = [];
+        validateField(nameField, namePattern, "No illegal characters.");
+        validateField(emailField, emailPattern, "Email address is not valid.");
+        validateField(messageField, messagePattern, "No illegal characters.");
+
+        if (form_errors.length > 0) {
+          event.preventDefault();
+          showError("List of errors.");
+          formErrorsInputted.value = JSON.stringify(form_errors);
+        }
+      });
+      
+    });
+  </script>
 </body>
